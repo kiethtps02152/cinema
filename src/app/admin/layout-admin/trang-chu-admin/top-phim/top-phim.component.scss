@@ -1,0 +1,32 @@
+@import '../../../../../assets/scss/admin/helper/variable';
+@import '../../../../../assets/scss/admin/helper/mixin';
+@import '../../../../../assets/scss/admin/helper/extend';
+
+.top_phim{
+    margin:50px 0;
+    padding:0 14px;
+
+    .title{
+        font-size:$fs-1;
+        color:rgb(243, 67, 67);
+    }
+
+    .data_table{
+        @extend %data_table;
+
+        td{
+            vertical-align: middle;
+            padding-left:10px;
+            
+            &.movie_name{
+                text-transform: uppercase;
+                @include text($fs-0 + 2, $fw-normal, $color-black);
+            }
+            
+        
+            img{
+                width:100px;
+            }
+        }
+     }
+}

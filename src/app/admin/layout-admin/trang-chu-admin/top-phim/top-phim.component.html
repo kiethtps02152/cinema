@@ -1,0 +1,22 @@
+<div class="top_phim">
+    <h1 class="display-5 title">Phim Top</h1>
+  <div class="data_table">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr class="text-center">
+                <th>STT</th>
+                <th class="text-left">Tên phim</th>
+                <!-- <th >Hình ảnh</th> -->
+                <th >Lượng vé</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let phim_top of DS_Phim_Top; let i = index" class="text-center">
+              <td class="stt">{{i+1}}</td>
+              <td class="text-left movie_name">{{phim_top.TenPhim}}</td>
+              <td >600</td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

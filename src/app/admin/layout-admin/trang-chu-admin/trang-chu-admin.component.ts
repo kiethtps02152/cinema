@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Phim } from 'src/app/_core/model/Phim';
 import { PhimService } from 'src/app/services/phim.service';
+import { PhimAdmin } from 'src/app/_core/model/PhimAdmin';
 @Component({
   selector: 'app-trang-chu-admin',
   templateUrl: './trang-chu-admin.component.html',
@@ -11,7 +12,7 @@ export class TrangChuAdminComponent implements OnInit {
   count_NguoiDung: number;
   count_Phim: number;
   count_Ve: number;
-  DS_phim: Phim[] = [];
+  DS_phim: PhimAdmin[] = [];
   constructor(private _userService: UserService, private _phimService: PhimService) {}
 
   ngOnInit() {
@@ -36,8 +37,5 @@ export class TrangChuAdminComponent implements OnInit {
       },
       error => console.log(error)
     );
-  }
-
-  demo() {
   }
 }
