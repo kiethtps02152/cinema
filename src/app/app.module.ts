@@ -1,19 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-// import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { AdminModule } from './admin/admin.module';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material';
-import { YoutubeEPipe } from './pipes/youtube-e.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { OwlModule } from 'ngx-owl-carousel';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { HomeModule } from './home/home.module';
+import { AdminModule } from './admin/admin.module';
 
 const appRoutes: Routes = [
   {path: '', loadChildren: () => HomeModule},
@@ -24,8 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
+    // BrowserModule,
+    // HomeModule,
     // BrowserAnimationsModule,
     MatProgressBarModule,
     HttpClientModule,
@@ -34,7 +33,11 @@ const appRoutes: Routes = [
     OwlModule,
     BrowserAnimationsModule,
     CommonModule,
-    RouterModule.forRoot(appRoutes),
+    // AppRoutingModule,
+    CommonModule,
+    // chỉ import browserModule 1 lần trong toàn ứng dụng
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,13 +9,11 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SliderComponent } from './trang-chu/slider/slider.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { PhimComponent } from './trang-chu/phim/phim.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // tslint:disable-next-line:max-line-length
 import { MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule, MatTabsModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { LoaiPhimComponent } from './trang-chu/loai-phim/loai-phim.component';
-import { PhimService } from '../services/phim.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ChitietphimComponent } from './trang-chu/chitietphim/chitietphim.component';
 import { YoutubeEPipe } from '../pipes/youtube-e.pipe';
@@ -30,7 +28,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginGuard } from '../guard/login.guard';
 import { HomeRoutesComponent } from './trang-chu/home-routes/home-routes.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
-import { BrowserModule } from '@angular/platform-browser';
 // import {YoutubeEPipe} from '../pipes/youtube-e.pipe';
 const homeRoutes: Routes = [
   {
@@ -87,8 +84,7 @@ const homeRoutes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     RouterModule.forChild(homeRoutes),
-    LoadingBarModule,
-    // BrowserModule
+    LoadingBarModule
   ],
   exports: [
     TrangChuComponent,
@@ -101,7 +97,8 @@ const homeRoutes: Routes = [
     ChitietphimComponent,
     YoutubeEPipe,
     FooterComponent,
-    HomeRoutesComponent
+    HomeRoutesComponent,
+    // RouterModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
