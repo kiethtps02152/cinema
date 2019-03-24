@@ -74,7 +74,7 @@ const homeRoutes: Routes = [
     CommonModule,
     AngularFontAwesomeModule,
     OwlModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
@@ -88,7 +88,7 @@ const homeRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(homeRoutes),
     LoadingBarModule,
-    BrowserModule
+    // BrowserModule
   ],
   exports: [
     TrangChuComponent,

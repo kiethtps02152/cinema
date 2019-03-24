@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,16 +25,16 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatProgressBarModule,
     HttpClientModule,
     LoadingBarHttpClientModule,
     LoadingBarModule,
     OwlModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
