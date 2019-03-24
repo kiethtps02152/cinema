@@ -1,0 +1,24 @@
+<div class="login">
+  <h1>Login</h1>
+  <div class="form">
+    <form [formGroup]="formLogin" autocomplete="off" (ngSubmit)="onSubmit()">
+      <mat-form-field class="tk">
+        <input matInput placeholder="Tài Khoản" formControlName="tkFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="!formLogin.controls.tkFormControl?.hasError(pattern)">
+          {{ getErrorMessageTK() }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="tk">
+        <input type="password" matInput placeholder="Mật khẩu" formControlName="mkFormControl"
+          [errorStateMatcher]="matcher">
+        <mat-error *ngIf="!formLogin.controls.mkFormControl?.hasError(pattern)">
+          {{ getErrorMessageMK() }}
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button type="submit" mat-raised-button color="warn" [disabled]="!formLogin.valid">Đăng Nhập</button>
+      </div>
+    </form>
+  </div>
+</div>

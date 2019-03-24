@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  // tslint:disable-next-line:no-inferrable-types
   isLogin: boolean = false;
   isAdminLogin: boolean;
   constructor() {
-	this.isAdminLogin = false;
+    this.isAdminLogin = false;
   }
-  
+
   checkLogin() {
     if (localStorage.getItem('taikhoan')) {
       this.isLogin = true;
@@ -17,7 +18,7 @@ export class AuthService {
       this.isLogin = false;
     }
   }
-  
+
    CheckAdminLogin() {
     if (localStorage.getItem('admin_login')) {
       this.isAdminLogin = true;
