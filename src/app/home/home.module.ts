@@ -50,7 +50,7 @@ const homeRoutes: Routes = [
     ]
   },
 
-]
+];
 @NgModule({
   declarations: [
     TrangChuComponent,
