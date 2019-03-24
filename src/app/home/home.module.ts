@@ -10,6 +10,7 @@ import { SliderComponent } from './trang-chu/slider/slider.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { PhimComponent } from './trang-chu/phim/phim.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// tslint:disable-next-line:max-line-length
 import { MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule, MatTabsModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
