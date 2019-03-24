@@ -20,8 +20,9 @@
 
     .logo{
         background: $color-orange-1;
-        height: 60px;
+        line-height: 60px;
         margin-bottom:25px;
+        @include text($fs-1,$fw-bold,$color-white);
     }
 
     .sidebar_nav{
