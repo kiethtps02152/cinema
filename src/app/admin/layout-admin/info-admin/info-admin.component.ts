@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NguoiDung } from 'src/app/_core/model/NguoiDung';
 import { StatusService } from 'src/app/services/status/status.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+import { FormAdminComponent } from './form-admin/form-admin.component';
 
 
 
@@ -15,6 +16,7 @@ import swal from 'sweetalert';
 export class InfoAdminComponent implements OnInit {
   admin_info: NguoiDung;
   old_pass: string;
+  @ViewChild('formAdmin') formAdmin: FormAdminComponent;
   constructor(private _statusService: StatusService, private _userService: UserService, private _router: Router) {
     this.admin_info = JSON.parse(localStorage.getItem('admin_login'));
     this.old_pass = this.admin_info.MatKhau;
@@ -48,6 +50,7 @@ export class InfoAdminComponent implements OnInit {
             this._statusService.ChangeStatusEditAdmin('update');
             if (this.old_pass !== this.admin_info.MatKhau) {
               localStorage.removeItem('admin_login');
+              this.formAdmin.btnCloseModal.nativeElement.click();
               this._router.navigate(['/admin/login']);
             }
           });

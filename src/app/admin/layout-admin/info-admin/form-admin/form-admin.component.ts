@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StatusService } from 'src/app/services/status/status.service';
 import { NguoiDung } from 'src/app/_core/model/NguoiDung';
@@ -11,6 +11,7 @@ import { NguoiDung } from 'src/app/_core/model/NguoiDung';
 export class FormAdminComponent implements OnInit {
   @Input() iAdmin: NguoiDung;
   @Output() EventCapNhatAdmin = new EventEmitter();
+  @ViewChild('btnCloseModal') btnCloseModal: ElementRef;
   Form_admin: FormGroup;
   constructor(private _statusService: StatusService) {
      // khởi tạo form
